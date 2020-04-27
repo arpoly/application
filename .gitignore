@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+env/
+[v.]env*/
+dist/
+lib/
+lib64/
+sdist/
+var/
+.installed.cfg
+
+# IDEA
+.project
+.idea
+*.iml
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Allure ignore
+**/allure-report/
+**/output/
+
+# PyTest
+.pytest_cache
+
+#pyenv
+.python-version
+/reports/
