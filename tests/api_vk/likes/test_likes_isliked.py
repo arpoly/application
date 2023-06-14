@@ -1,10 +1,10 @@
 import pytest
 
-from framework.checker import *
-from framework.client_tool import Client
-from framework.constants import ACCESS_TOKEN
-from framework.media_data import *
-from framework.methods import ISLIKED_LIKES
+from src.checker import *
+from src.client_tool import Client
+from src.constants import ACCESS_TOKEN
+from src.media_data import *
+from src.methods import ISLIKED_LIKES
 
 
 @allure.suite("isLiked.likes:")

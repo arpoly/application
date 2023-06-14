@@ -4,7 +4,7 @@ from hamcrest import assert_that, equal_to
 from requests import codes
 import time
 
-from framework.schemas import *
+from src.schemas import *
 
 
 def _response_general_check(response, expected_code=codes.ok):

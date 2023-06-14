@@ -1,9 +1,9 @@
 from cerberus import Validator
 
-from framework.constants import acces_token
-from framework.checker import check_status_code_200
-from framework.client_tool import Client
-from framework.methods import add_likes
+from src.constants import acces_token
+from src.checker import check_status_code_200
+from src.client_tool import Client
+from src.methods import add_likes
 
 
 def add_posts_like_list():
