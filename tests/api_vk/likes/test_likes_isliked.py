@@ -2,7 +2,7 @@ import pytest
 
 from framework.checker import *
 from framework.client_tool import Client
-from framework.config import ACCESS_TOKEN
+from framework.constants import ACCESS_TOKEN
 from framework.media_data import *
 from framework.methods import ISLIKED_LIKES
 
@@ -20,7 +20,6 @@ class TestIsLiked:
         response = Client.post(ISLIKED_LIKES, params)
         check_status_code_200(response)
         check_isliked_response(response.json())
-        print(response.json())
 
     @pytest.mark.run(order=2)
     @pytest.mark.smoke
@@ -32,7 +31,6 @@ class TestIsLiked:
         response = Client.post(ISLIKED_LIKES, params)
         check_status_code_200(response)
         check_isliked_response(response.json())
-        print(response.json())
 
     @pytest.mark.run(order=2)
     @pytest.mark.smoke
@@ -44,7 +42,6 @@ class TestIsLiked:
         response = Client.post(ISLIKED_LIKES, params)
         check_status_code_200(response)
         check_isliked_response(response.json())
-        print(response.json())
 
     @pytest.mark.run(order=2)
     @pytest.mark.smoke
@@ -56,7 +53,6 @@ class TestIsLiked:
         response = Client.post(ISLIKED_LIKES, params)
         check_status_code_200(response)
         check_isliked_response(response.json())
-        print(response.json())
 
     @pytest.mark.run(order=2)
     @pytest.mark.smoke
@@ -68,4 +64,3 @@ class TestIsLiked:
         response = Client.post(ISLIKED_LIKES, params)
         check_status_code_200(response)
         check_invalid_is_liked_body(response.json())
-        print(response.json())

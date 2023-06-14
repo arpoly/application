@@ -1,20 +1,17 @@
 # vk-api tests
 
 How to run tests:
-    
+
     in application folder run:
-     
-    python3 -m pytest tests --alluredir ./reports  
-    
+    python3 -m pytest tests --alluredir ./reports
     or:
-    
     pytest -v -m smoke --alluredir ./reports
 
-Generate allure report: 
-    
+Generate allure report:
+
     allure serve ./reports
- 
-Methods: 
+
+Methods:
 
     likes.add 
     likes.delete
@@ -24,15 +21,15 @@ Methods:
 1.Python setup:
 
     brew install python3 
-       
+
 2.Install dependencies:
 
 in application folder run:
 
     pip3 install requirements.txt 
-        
+
 3.Set your app api data in config.py, example:
-    
+
     1.Create vk app:
     https://vk.com/editapp?act=create
     REDIRECT_URL = "http://localhost/vk-auth"
@@ -48,26 +45,25 @@ in application folder run:
      add data in config.py
     
     or create by running get_token_selenium.py
-    
+
 4.Driver:
 
 Download web driver for current Chrome version  
 https://sites.google.com/a/chromium.org/chromedriver/downloads
 
     After download, set current driver path "CHROME_DRIVER_PATH=" in config.py  
-    
+
 5.Set current user data in config.py
-    
+
     USER_LOGIN = ""
     USER_PASSWORD = ""
-    
+
 Example public:
-
     https://vk.com/dailywisdom
-    
-Whats Next: 
 
+Whats Next?
+    logging
     fixture generator
-    scheme validate negative cases 
-    setup/tearndown style
+    scheme validate negative cases
+    
     

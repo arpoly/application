@@ -1,6 +1,6 @@
 import requests as r
 
-from framework.config import VK_HOST
+from framework.constants import VK_HOST
 
 
 class Client:

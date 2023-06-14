@@ -1,6 +1,6 @@
 from cerberus import Validator
 
-from framework.config import acces_token
+from framework.constants import acces_token
 from framework.checker import check_status_code_200
 from framework.client_tool import Client
 from framework.methods import add_likes
