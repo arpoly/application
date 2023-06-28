@@ -1,28 +1,24 @@
+import logging
+
 from cerberus import Validator
 
-from src.constants import acces_token
 from src.checker import check_status_code_200
 from src.client_tool import Client
-from src.methods import add_likes
+from src.constants import MEDIA_TYPES, ITEM_ID, ADD_LIKES
+from src.secrets import ACCESS_TOKEN, OWNER_ID
 
 
 def add_posts_like_list():
-    params = {"type": f"{media_types[0]}", "owner_id": f"{owner_id}", "item_id": f"{item_id[0]}", "filter": "likes",
+    params = {"type": f"{MEDIA_TYPES[0]}", "owner_id": f"{OWNER_ID}", "item_id": f"{ITEM_ID[0]}", "filter": "likes",
               "friends_only": "1", "offset": "100", "count": "100",
-              "access_token": f"{acces_token}", "v": "5.103"}
-    response = Client.post(add_likes, params)
+              "access_token": f"{ACCESS_TOKEN}", "v": "5.103"}
+    response = Client.post(ADD_LIKES, params)
     check_status_code_200(response)
-
-    print(response.json())
 
     v = Validator()
     v.schema = {"response": {"type": "dict", "schema": {"likes": {"type": "integer"}}}}
 
     if v.validate(response.json()):
-        print("valid data")
+        logging.info("valid data")
     else:
-        print('invalid data')
-        print(v.errors)
-
-
-add_posts_like_list()
+        logging.info('invalid data')

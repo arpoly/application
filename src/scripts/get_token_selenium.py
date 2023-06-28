@@ -6,7 +6,8 @@ from urllib.parse import urlparse
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from src.constants import CLIENT_ID, GET_TOKEN_URL, DRIVER_PATH, REDIRECT_URL, USER_LOGIN, USER_PASSWORD
+from src.constants import GET_TOKEN_URL, REDIRECT_URL
+from src.secrets import CLIENT_ID, DRIVER_PATH, USER_LOGIN, USER_PASSWORD
 
 
 # @pytest.fixture(scope="session")
@@ -27,7 +28,7 @@ def access_token():
     json_params = dict(urllib.parse.parse_qsl(fragment))
     access_code = json_params["access_token"]
     driver.implicitly_wait("20")
-    return print(access_code)
+    return access_code
 
 
 access_token()

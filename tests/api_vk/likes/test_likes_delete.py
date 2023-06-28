@@ -2,9 +2,8 @@ import pytest
 
 from src.checker import *
 from src.client_tool import Client
-from src.constants import ACCESS_TOKEN
-from src.media_data import *
-from src.methods import DELETE_LIKES
+from src.constants import MEDIA_TYPES, ITEM_ID, DELETE_LIKES
+from src.secrets import ACCESS_TOKEN, OWNER_ID
 
 
 @allure.suite("delete.likes:")

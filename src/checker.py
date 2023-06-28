@@ -1,8 +1,9 @@
+import time
+
 import allure
 from cerberus import Validator
 from hamcrest import assert_that, equal_to
 from requests import codes
-import time
 
 from src.schemas import *
 
@@ -22,7 +23,6 @@ def _response_body_check(body, schema):
     else:
         b = "invalid data"
         assert b == "valid data"
-        print(v.errors)
 
 
 def _response_invalid_body(body, schema):
@@ -32,7 +32,6 @@ def _response_invalid_body(body, schema):
     if v.validate(body):
         massage = "invalid data"
         assert massage != "valid data"
-        print(v.errors)
 
 
 @allure.step
