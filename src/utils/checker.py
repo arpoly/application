@@ -5,7 +5,7 @@ from cerberus import Validator
 from hamcrest import assert_that, equal_to
 from requests import codes
 
-from src.schemas import *
+from src.utils.schemas import *
 
 
 def _response_general_check(response, expected_code=codes.ok):

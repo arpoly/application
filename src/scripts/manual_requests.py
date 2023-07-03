@@ -2,10 +2,10 @@ import logging
 
 from cerberus import Validator
 
-from src.checker import check_status_code_200
+from src.utils.checker import check_status_code_200
 from src.client_tool import Client
-from src.constants import MEDIA_TYPES, ITEM_ID, ADD_LIKES
-from src.secrets import ACCESS_TOKEN, OWNER_ID
+from src.utils.constants import MEDIA_TYPES, ITEM_ID, ADD_LIKES
+from src.utils.secrets import ACCESS_TOKEN, OWNER_ID
 
 
 def add_posts_like_list():

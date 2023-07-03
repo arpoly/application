@@ -6,8 +6,8 @@ from urllib.parse import urlparse
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from src.constants import GET_TOKEN_URL, REDIRECT_URL
-from src.secrets import CLIENT_ID, DRIVER_PATH, USER_LOGIN, USER_PASSWORD
+from src.utils.constants import GET_TOKEN_URL, REDIRECT_URL
+from src.utils.secrets import CLIENT_ID, DRIVER_PATH, USER_LOGIN, USER_PASSWORD
 
 
 # @pytest.fixture(scope="session")

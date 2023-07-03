@@ -1,9 +1,9 @@
 import pytest
 
-from src.checker import *
+from src.utils.checker import *
 from src.client_tool import Client
-from src.constants import MEDIA_TYPES, ITEM_ID, ISLIKED_LIKES
-from src.secrets import ACCESS_TOKEN, OWNER_ID
+from src.utils.constants import MEDIA_TYPES, ITEM_ID, ISLIKED_LIKES
+from src.utils.secrets import ACCESS_TOKEN, OWNER_ID
 
 
 @allure.suite("isLiked.likes:")
