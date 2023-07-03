@@ -1,69 +1,84 @@
-# vk-api tests
+# VK-API Tests
 
-How to run tests:
+This repository contains tests for VK API. These tests are written in Python and use pytest as the testing framework.
 
-    in application folder run:
-    python3 -m pytest tests --alluredir ./reports
-    or:
-    pytest -v -m smoke --alluredir ./reports
+## Running Tests
 
-Generate allure report:
+To run the tests, follow these steps:
 
-    allure serve ./reports
+1. Install Python 3:
 
-Methods:
+```
+brew install python3
+```
 
-    likes.add 
-    likes.delete
-    likes.getList
-    likes.isLiked
+2. Install the dependencies by running the following command in the application folder:
 
-1.Python setup:
+```
+pip3 install -r requirements.txt
+```
 
-    brew install python3 
+3. Set up your VK app API data in `config.py`. You can create a VK app by
+   visiting [this link](https://vk.com/editapp?act=create). You need to provide the following information:
 
-2.Install dependencies:
+```
+REDIRECT_URL = "http://localhost/vk-auth"
+CLIENT_ID = "Your_Client_ID"
+CLIENT_SECRET = "Your_Client_Secret"
+```
 
-in application folder run:
+You also need to obtain an access token. You can do this by following the instructions
+at [VK's Implicit Flow User Documentation](https://vk.com/dev/implicit_flow_user). After obtaining the access token, add
+it to `config.py`.
 
-    pip3 install requirements.txt 
+Alternatively, you can use the `get_token_selenium.py` script to create an access token automatically.
 
-3.Set your app api data in config.py, example:
+4. Download the Chrome WebDriver that matches your current Chrome browser version
+   from [here](https://sites.google.com/a/chromium.org/chromedriver/downloads). After downloading, set the path to the
+   WebDriver in `config.py`:
 
-    1.Create vk app:
-    https://vk.com/editapp?act=create
-    REDIRECT_URL = "http://localhost/vk-auth"
-    CLIENT_ID = "7418578"
-    CLIENT_SECRET = "3yx0xzUjzMCFcl5LAieF"
-    
-    2.Get access token by:
-    https://vk.com/dev/implicit_flow_user   
-    
-      Example request, scope offline mode:
-    https://oauth.vk.com/authorize?client_id=7418565&display=page&redirect_uri=https://oauth.vk.com/blank.html&scope=friends,wall,pages,offline&response_type=token&v=5.103`
-    
-     add data in config.py
-    
-    or create by running get_token_selenium.py
+```
+CHROME_DRIVER_PATH = "path_to_chromedriver"
+```
 
-4.Driver:
+5. Set your VK user login and password in `config.py`:
 
-Download web driver for current Chrome version  
-https://sites.google.com/a/chromium.org/chromedriver/downloads
+```
+USER_LOGIN = "Your_Login"
+USER_PASSWORD = "Your_Password"
+```
 
-    After download, set current driver path "CHROME_DRIVER_PATH=" in config.py  
+6. To run the tests, use the following command:
 
-5.Set current user data in config.py
+```
+python3 -m pytest tests --alluredir ./reports
+```
 
-    USER_LOGIN = ""
-    USER_PASSWORD = ""
+You can also specify a specific test category to run, for example:
 
-Example public:
-    https://vk.com/dailywisdom
+```
+pytest -v -m smoke --alluredir ./reports
+```
 
-Whats Next?
-    logging
-    fixture generator
-    scheme validate negative cases
-    
-    
+## Generating Allure Report
+
+To generate the Allure report for the tests, follow these steps:
+
+1. Make sure you have Allure installed. If not, install it by running:
+
+```
+brew install allure
+```
+
+2. Run the following command to generate the report:
+
+```
+allure serve ./reports
+```
+
+## Next Steps
+
+- Implement logging
+- Create a fixture generator
+- Add scheme validation for negative cases
+
