@@ -79,6 +79,10 @@ allure serve ./reports
 ## Next Steps
 
 - Implement logging
-- Create a fixture generator
-- Add scheme validation for negative cases
+- DataClases
+- Request Builders
+- Env Running 
+- Pipeline Integration
+- Pre-commit, linters
+- Swagger CodeGen Tests
 
