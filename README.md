@@ -1,4 +1,4 @@
-# VK-API Tests
+# vk-api test example
 
 This repository contains tests for VK API. These tests are written in Python and use pytest as the testing framework.
 
